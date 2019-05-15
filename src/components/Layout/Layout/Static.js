@@ -5,8 +5,8 @@ import AppHeader from 'components/Layout/Header';
 const StaticLayout = props => {
     return (
         <Fragment>
-            <section className="body-wrapper">
-                <section className="body-main">
+            <section>
+                <section>
                     <AppHeader />
                     {props.children}
                 </section>

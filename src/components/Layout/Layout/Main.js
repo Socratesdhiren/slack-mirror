@@ -10,8 +10,8 @@ const MainLayout = props => {
         <Fragment>
             <AppHeader />
 
-            <div className="container-fluid">
-                <section className="row h-100">
+            <div >
+                <section>
                     <SideNav />
 
                     <main >{props.children}</main>

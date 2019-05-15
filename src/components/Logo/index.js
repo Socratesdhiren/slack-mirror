@@ -2,7 +2,7 @@ import React from 'react';
 
 const Logo = () => (
 
-        <img src="../../favicon.png" alt="CTX" height="40" />
+        <img src="../../favicon.ico" alt="CTX" height="40" />
 
 );
 
