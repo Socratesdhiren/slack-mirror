@@ -1,6 +1,11 @@
 import React, {Component} from "react";
 
-
+// const Family =(props)=> {
+//     <div className="family">
+//       <Unsupported/>
+//     </div>
+//
+// }
 class Channel extends Component {
     onClick(e) {
         e.preventDefault();
@@ -11,11 +16,18 @@ class Channel extends Component {
     render() {
         const {channel} = this.props;
         return (
-            <li>
-                <a onClick={this.onClick.bind(this)}>
-                    <p>Here I am .....</p>
-                </a>
-            </li>
+            <div className="channnl" >
+
+                <p> Here I am in the channel</p>
+                <li>
+                    <a onClick={this.onClick.bind(this)}>
+                        <p>Here I am .....</p>
+                    </a>
+                </li>
+
+            </div>
+
+
         )
     }
 

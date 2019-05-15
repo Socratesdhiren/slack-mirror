@@ -1,0 +1,28 @@
+import React, { Fragment } from 'react';
+
+import AppHeader from 'components/Layout/Header';
+import SideNav from 'components/Layout/SideNav';
+import Footer from 'components/Layout/Footer';
+
+const MainLayout = props => {
+
+    return (
+        <Fragment>
+            <AppHeader />
+
+            <div className="container-fluid">
+                <section className="row h-100">
+                    <SideNav />
+
+                    <main >{props.children}</main>
+                </section>
+
+                /* you can add notification here */
+            </div>
+
+            <Footer />
+        </Fragment>
+    );
+};
+
+export default MainLayout;
