@@ -6,12 +6,11 @@ import * as serviceWorker from './serviceWorker';
 
 //css for the project is also implemented here.
 
-
 const mountNode = document.getElementById('root');
 
  render(
 
-    <App />,
+    <App/>,
     mountNode
 );
 

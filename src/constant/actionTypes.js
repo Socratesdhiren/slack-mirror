@@ -1,2 +1,6 @@
 export const HTTP_404_ERROR = 'HTTP_404_ERROR';
 export const HTTP_500_ERROR = 'HTTP_500_ERROR';
+
+export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
+export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
+export const LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';

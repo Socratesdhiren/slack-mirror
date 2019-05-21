@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 
+import 'index.css';
 import AppHeader from 'components/Layout/Header';
 import SideNav from 'components/Layout/SideNav';
 import Footer from 'components/Layout/Footer';
