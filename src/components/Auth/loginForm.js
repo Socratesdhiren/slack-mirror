@@ -1,29 +1,42 @@
-import React, {Component} from 'react';
-import {Form, Icon, Input, Button} from 'antd';
-
+import React, {useState, Fragment,useContext} from 'react';
+import {Form, Icon, Input, Button, Row} from 'antd';
 import 'antd/dist/antd.css';
+
+import './index.css';
+import AppFooter from "../Layout/Footer";
+import { AuthContext } from '../Context/AuthContext';
+import Message from '../Common/Message';
 
 const FormItem = Form.Item;
 
-class LoginForm extends Component {
+const LoginForm  = props =>  {
+    const [errorMessage, setErrorMessage] = useState('');
+    const { login } = useContext(AuthContext);
 
-    handleSubmit = (e) => {
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+        props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('values', values);
-                this.props.submitForm(values);
+                login(values).catch(error => {
+                    setErrorMessage(error.response.data);
+                });
             }
         })
     };
 
-    render() {
-        console.log("this prosp", this.props);
-        const {getFieldDecorator} = this.props.form;
+        const {getFieldDecorator} = props.form;
 
         return (
-            <div>
-                <Form onSubmit={this.handleSubmit} className="login-form" layout="vertical">
+            <Fragment>
+                <Message error={errorMessage} />
+            <div className="login-form">
+                <div className="logo">
+                    <img alt="logo"/>
+                    <span>abcdefgh</span>
+                </div>
+
+                <Form onSubmit={handleSubmit}  layout="vertical">
                     <FormItem>
                         {getFieldDecorator('username', {
                             rules: [{required: true, message: 'Please input your username!'}],
@@ -45,16 +58,20 @@ class LoginForm extends Component {
                             />,
                         )}
                     </FormItem>
-                    <FormItem>
+                    <Row>
                         <Button type="primary" htmlType="submit" className="login-form-button">
-                            Log in
+                            Sign in
                         </Button>
-                    </FormItem>
+                    </Row>
                 </Form>
             </div>
+                {/*<div className="footer">*/}
+                    {/*<AppFooter/>*/}
+                {/*</div>*/}
+
+            </Fragment>
         );
-    }
-}
+    };
 
 const WrappedLoginForm = Form.create()(LoginForm);
 

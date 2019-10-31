@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LanguageList from './languageList';
+import LanguageList from './LanguageList';
 
 const LanguageSelector = () => <LanguageList />;
 

@@ -1,0 +1,16 @@
+.term {
+  display: table-cell;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.term:after {
+  content: ':';
+  margin: 0 8px 0 2px;
+  position: relative;
+  top: -0.5px;
+}
+
+.detail {
+  margin-left: 10px;
+  padding-bottom: 16px;
+}
